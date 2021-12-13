@@ -47,6 +47,21 @@ namespace Snake2
             canvas.Children.Add(ellSerp);
             Canvas.SetTop(ellSerp, jocSerp.CapSerp.Y * tamanyYCasella );
             Canvas.SetLeft(ellSerp, jocSerp.CapSerp.X * tamanyXCasella );
+
+            foreach (var poma in jocSerp.Pomes)
+            {
+                Ellipse ell = new Ellipse()
+                {
+                    Fill = Brushes.Pink,
+                    Width = tamanyXCasella,
+                    Height = tamanyYCasella,
+                };
+
+                canvas.Children.Add(ell);
+                Canvas.SetTop(ell, poma.Y* tamanyYCasella);
+                Canvas.SetLeft(ell, poma.X * tamanyXCasella);
+            }
+
         }
 
         private void canvas_KeyDown(object sender, KeyEventArgs e)
